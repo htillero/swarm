@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: gvilarino/swarm-networking
+    image: htillero/swarm-networking
     environment:
       MONGO_URL: "mongodb://db:27017/test"
     depends_on:
@@ -14,7 +14,7 @@ services:
         constraints: [node.role==worker]  
 
   db:
-    image: mongo
+    image: mongo:4.0.4
     deploy:
       placement:
         constraints: [node.role==worker]
