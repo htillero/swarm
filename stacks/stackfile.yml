@@ -27,4 +27,4 @@ services:
         placement:
           constraints: [node.role==manager]
       volumes:
-          - src=/var/run/docker.sock,dst=/var/run/docker.sock
+          - "mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock"
