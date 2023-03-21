@@ -18,3 +18,13 @@ services:
     deploy:
       placement:
         constraints: [node.role==worker]
+
+  viz:
+      image: dockersamples/visualizer
+      ports:
+        - "8080:8080"
+      deploy:
+        placement:
+          constraints: [node.role==manager]
+      volumes:
+          - src=/var/run/docker.sock,dst=/var/run/docker.sock
